@@ -20,3 +20,13 @@ div#box2 {
 img {
   width: 50%;
 }
+
+div.output-box {
+  width: 50%;
+  height: 150px;
+  border: 10px solid green;
+  border-radius: 5em;
+  padding: 5px;
+  margin: 25px;
+  display: inline-block;
+}
