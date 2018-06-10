@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Rock Paper Scissor</h1>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div onclick="showRock(event)" id="rock"><img src="img/Rock.png" alt="Rock"></div>
+        </div>
+
+        <div class="col-md-4">
+          <div onclick="showPaper(event)" id="paper"><img src="img/Paper.jpg" alt="Paper"></div>
+        </div>
+
+        <div class="col-md-4">
+          <div onclick="showScissor(event)" id="scissor"><img src="img/scissor.png" alt="Scissor"></div>
+        </div>
+        <br>
+        <h2><span id="user-selection">Selection Here</span></h2>
+      </div>
+
+      <div class="row">
+        <h1>Show coordinate test area. Click on different area inside the box</h1>
+        <div class="col-md-6">
+            <div onclick="showCoords1(event)" id="box"><p id="demo"></p></div>
+        </div>
+        <div class="col-md-6">
+          <div onclick="showCoords2(event)" id="box2"><p id="demo2"></p></div>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="output-area">
+
+    </div>
+
+  </body>
+</html>
