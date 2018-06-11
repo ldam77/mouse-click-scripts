@@ -11,17 +11,17 @@ function changeImage(source, location){
 
 function showRock(event) {
   changeImage('img/Rock.png', 'your-pick');
-    rockPaperScissorResult("rock");
+    rockPaperScissorResult("Rock");
 }
 
 function showPaper(event) {
   changeImage('img/Paper.png', 'your-pick');
-    rockPaperScissorResult("paper");
+    rockPaperScissorResult("Paper");
 }
 
 function showScissor(event) {
   changeImage('img/Scissor.png', 'your-pick');
-    rockPaperScissorResult("scissor");
+    rockPaperScissorResult("Scissor");
 }
 
 // get a random number between 0 and max-1
@@ -30,20 +30,42 @@ function getRandomInt(max) {
 }
 
 function rockPaperScissorResult(userPick){
-  var result = "You Win!!!";
+  var result = "";
   var rpsChoices = ["Rock", "Paper", "Scissor"];
   var cpuPick = rpsChoices[getRandomInt(3)];
 
   if(cpuPick === "Rock"){
     changeImage('img/Rock.png', 'cpu-pick');
+    if(userPick === "Rock"){
+      result = "It's a tie!";
+    } else if(userPick === "Paper"){
+      result = "You win!!!";
+    } else {
+      result = "You lose!!!";
+    };
   } else if(cpuPick === "Paper"){
     changeImage('img/Paper.png', 'cpu-pick');
+    if(userPick === "Rock"){
+      result = "You lose!!!";
+    } else if(userPick === "Paper"){
+      result = "It's a tie!";
+    } else {
+      result = "You win!!!";
+    };
   }else {
     changeImage('img/Scissor.png', 'cpu-pick');
+    if(userPick === "Rock"){
+      result = "You win!!!";
+    } else if(userPick === "Paper"){
+      result = "You lose!!!";
+    } else {
+      result = "It's a tie!";
+    };
   };
 
   $("#output1").text("You chose " + userPick + ". I chose " + cpuPick + ".");
   $("#output2").text(result);
+  $("#output-area").fadeIn();
 }
 
 function showCoords1(event) {

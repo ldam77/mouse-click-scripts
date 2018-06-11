@@ -2,6 +2,10 @@ body {
   text-align: center;
 }
 
+#output-area {
+  display: none;
+}
+
 div#box {
     width: 500px;
     height: 300px;
