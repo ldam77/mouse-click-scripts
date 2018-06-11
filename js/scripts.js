@@ -29,10 +29,14 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+var fightSound = new Audio("audio/Fight.mp3");
+
 function rockPaperScissorResult(userPick){
   var result = "";
   var rpsChoices = ["Rock", "Paper", "Scissor"];
   var cpuPick = rpsChoices[getRandomInt(3)];
+
+  fightSound.play();
 
   if(cpuPick === "Rock"){
     changeImage('img/Rock.png', 'cpu-pick');
