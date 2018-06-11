@@ -29,41 +29,50 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-var fightSound = new Audio("audio/Fight.mp3");
+var youLose = new Audio("audio/You-lose.mp3");
+var youWin = new Audio("audio/You-win.mp3");
+var sadSound = new Audio("audio/Sad-trombone.mp3");
 
 function rockPaperScissorResult(userPick){
   var result = "";
   var rpsChoices = ["Rock", "Paper", "Scissor"];
   var cpuPick = rpsChoices[getRandomInt(3)];
 
-  fightSound.play();
-
   if(cpuPick === "Rock"){
     changeImage('img/Rock.png', 'cpu-pick');
     if(userPick === "Rock"){
       result = "It's a tie!";
+      sadSound.play();
     } else if(userPick === "Paper"){
       result = "You win!!!";
+      youWin.play();
     } else {
       result = "You lose!!!";
+      youLose.play();
     };
   } else if(cpuPick === "Paper"){
     changeImage('img/Paper.png', 'cpu-pick');
     if(userPick === "Rock"){
       result = "You lose!!!";
+      youLose.play();
     } else if(userPick === "Paper"){
       result = "It's a tie!";
+      sadSound.play();
     } else {
       result = "You win!!!";
+      youWin.play();
     };
   }else {
     changeImage('img/Scissor.png', 'cpu-pick');
     if(userPick === "Rock"){
       result = "You win!!!";
+      youWin.play();
     } else if(userPick === "Paper"){
       result = "You lose!!!";
+      youLose.play();
     } else {
       result = "It's a tie!";
+      sadSound.play();
     };
   };
 
