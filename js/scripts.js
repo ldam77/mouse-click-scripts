@@ -65,7 +65,9 @@ function rockPaperScissorResult(userPick){
 
   $("#output1").text("You chose " + userPick + ". I chose " + cpuPick + ".");
   $("#output2").text(result);
-  $("#output-area").fadeIn();
+  $("#output-area").fadeIn(100).fadeOut(100).fadeIn(100);
+  $("#versus").effect("shake");
+  // $("#output-area").toggle("pulsate");
 }
 
 function showCoords1(event) {
